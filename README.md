@@ -33,7 +33,9 @@ run :
 docker exec -it pihole bash
 ```
  dans le bash run :
- ```pihole setpassword```
+ 
+```pihole setpassword
+```
 )
 2.Allez dans Settings > DNS.
 3.Dans la section Interface settings, sélectionnez "Permit all origins".
