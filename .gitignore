@@ -4,6 +4,6 @@
 # Exceção: mantém o docker-compose.yml
 !docker-compose.yml
 !README.md
-
+!pihole.png
 # Exceção: garante que o .gitignore seja rastreado
 !.gitignore
