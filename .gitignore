@@ -3,6 +3,7 @@
 
 # Exceção: mantém o docker-compose.yml
 !docker-compose.yml
+!README.md
 
 # Exceção: garante que o .gitignore seja rastreado
 !.gitignore
