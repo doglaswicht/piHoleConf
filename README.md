@@ -1,5 +1,5 @@
 Pi-hole sur Docker (Raspberry Pi) - Setup
-
+![piHole Workflow](/pihole.png)
 Ce projet contient la configuration et le guide étape par étape pour faire fonctionner un serveur de blocage de publicités au niveau du réseau (DNS Sinkhole) en utilisant Docker et Pi-hole.
 
 install Docker: https://docs.docker.com/engine/install/ubuntu/
