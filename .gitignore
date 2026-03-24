@@ -1,0 +1,8 @@
+# Ignora tudo
+*
+
+# Exceção: mantém o docker-compose.yml
+!docker-compose.yml
+
+# Exceção: garante que o .gitignore seja rastreado
+!.gitignore

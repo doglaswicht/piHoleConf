@@ -1,0 +1,21 @@
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    # --- ADICIONE ESTAS DUAS LINHAS ABAIXO ---
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    # -----------------------------------------
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "80:80/tcp"
+    environment:
+      TZ: 'America/Sao_Paulo'
+      WEBPASSWORD: 'douglait120726'
+    volumes:
+      - './etc-pihole:/etc/pihole'
+      - './etc-dnsmasq.d:/etc/dnsmasq.d'
+    restart: unless-stopped
+
