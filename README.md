@@ -34,7 +34,9 @@ docker exec -it pihole bash
 ```
  dans le bash run :
  
-```pihole setpassword
+```
+pihole setpassword
+
 ```
 )
 2.Allez dans Settings > DNS.
@@ -46,7 +48,27 @@ Configurer le router:
 Modifier le dns server automatique pour manuel e pointer vers l'IP de ta machine (ou se trouve le pihole)
 
 
+Sécurité et Bonnes Pratiques
+L'utilisation de Pi-hole sur un Raspberry Pi est très sûre pour un usage domestique, mais il est important de respecter ces quelques règles de sécurité :
 
+1. Ne jamais ouvrir le port 53 sur votre Box (Router)
+Danger : Si vous créez une règle de "Port Forwarding" pour le port 53 (DNS) sur votre routeur (Swisscom, Salt, Sunrise), votre Pi-hole devient un Open Resolver.
+Risque : Des attaquants externes peuvent utiliser votre Raspberry Pi pour lancer des attaques DDoS à travers le monde.
+Solution : Laissez le port 53 fermé sur votre box. Le Pi-hole doit rester accessible uniquement depuis votre réseau local (LAN/WLAN).
+
+2. Protection de l'Interface Admin
+L'interface de gestion (/admin) est le cœur de votre configuration.
+Risque : Toute personne connectée à votre Wi-Fi peut tenter d'accéder au panneau de contrôle.
+Solution : Utilisez un mot de passe complexe pour la variable WEBPASSWORD dans votre fichier docker-compose.yml. Ne partagez jamais votre mot de passe réel sur GitHub.
+
+3. Gestion de l'espace disque (Carte SD)
+Le Pi-hole génère des journaux (logs) quotidiennement pour afficher les statistiques.
+Risque : Si votre carte SD atteint 100% d'utilisation, le service DNS s'arrêtera brusquement, coupant ainsi l'accès internet à toute votre maison.
+Solution : Surveillez régulièrement l'espace disque avec la commande df -h et nettoyez les anciens conteneurs avec docker system prune.
+
+4. Accès SSH au Raspberry Pi
+Le Pi-hole n'est aussi sûr que le système qui l'héberge.
+Solution : Changez le mot de passe par défaut de votre utilisateur Raspberry (sudo raspi-config) et, si possible, utilisez des clés SSH pour vous connecter.
 
 
 
