@@ -26,7 +26,7 @@ Configuration Post-Installation
 
 Pour que le Pi-hole réponde aux requêtes provenant de votre routeur ou de vos appareils :
 
-1.Accédez à http://<IP-DU-RASPBERRY>/admin
+1.Accédez à "http://<IP-DU-RASPBERRY>/admin"
 (cest possible que le mdp ne functione pas, il faut acceder via bash pour setup le mdp
 run :
 ```
